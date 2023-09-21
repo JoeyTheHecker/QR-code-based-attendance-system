@@ -38,7 +38,7 @@
                                     @foreach ($approved_employees as $approved_employee)
                                     <tr>
                                         <td>{{ strtoupper($approved_employee->employee->employee_code)}}</td>
-                                        <td>{{ strtoupper($approved_employee->employee->first_name)}} {{ strtoupper(Str::substr($approved_employee->employee->middle_name, 0, 1))}}. {{ strtoupper($approved_employee->employee->last_name)}} @if ($approved_employee->employee->suffix){{{ strtoupper($approved_employee->employee->suffix) }}}@endif</td>
+                                        <td>{{ strtoupper($approved_employee->employee->first_name)}} {{ strtoupper(Str::substr($approved_employee->employee->middle_name, 0, 1))}}. {{ strtoupper($approved_employee->employee->last_name)}} @if ($approved_employee->employee->suffix != 'N/A'){{{ strtoupper($approved_employee->employee->suffix) }}}@endif</td>
                                         <td>{{ strtoupper($approved_employee->employee->designation) }}</td>
                                         <td>{{ strtoupper($approved_employee->employee->province_lgu_jpo) }}</td>
                                         <td>{{ strtoupper($approved_employee->employee->delegation) }}</td>

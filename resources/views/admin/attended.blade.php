@@ -40,7 +40,7 @@
                                     @foreach ($attended_employees as $attended_employee)
                                     <tr>
                                         <td>{{ strtoupper($attended_employee->employee->employee_code)}}</td>
-                                        <td>{{ strtoupper($attended_employee->employee->first_name)}} {{ strtoupper(Str::substr($attended_employee->employee->middle_name, 0, 1))}}. {{ strtoupper($attended_employee->employee->last_name)}} @if ($attended_employee->employee->suffix){{{ strtoupper($attended_employee->employee->suffix) }}}@endif</td>
+                                        <td>{{ strtoupper($attended_employee->employee->first_name)}} {{ strtoupper(Str::substr($attended_employee->employee->middle_name, 0, 1))}}. {{ strtoupper($attended_employee->employee->last_name)}} @if ($attended_employee->employee->suffix != "N/A"){{{ strtoupper($attended_employee->employee->suffix) }}}@endif</td>
                                         <td>{{ strtoupper($attended_employee->employee->designation) }}</td>
                                         <td>{{ strtoupper($attended_employee->employee->province_lgu_jpo) }}</td>
                                         <td>{{ strtoupper($attended_employee->employee->delegation) }}</td>

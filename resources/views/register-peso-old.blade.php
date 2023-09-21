@@ -82,6 +82,7 @@
           box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
         }
       </style>
+      
 <div class="image-container set-full-height" style="background-image: url('assets3/img/peso-congress.png');">
     <!--   LOGO here   -->
     {{-- <a href="">

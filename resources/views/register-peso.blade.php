@@ -20,8 +20,163 @@
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link href="assets4/css/demo.css" rel="stylesheet" />
 </head>
+<style>
+    /* Styles for the switch button and modal */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
 
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+    text-align: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+p {
+    margin-bottom: 1em;
+    margin-top: 0;
+    text-align: justify;
+}
+
+li {
+    text-align: justify;
+}
+
+
+</style>
 <body>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <h2><b>Data Privacy and Terms and Condition of Use</b></h2>
+            <p>We are committed to protect the privacy of our users and we will only collect, record, store, process, and use your personal information in accordance with Republic Act No. 10173 or the Data Privacy Act of 2012 and other pertinent laws. The outline below provides for the manner by which we manage the personal information that we will obtain from you if you visit our website.</p>
+            <p>Collection of Personal Information We primarily collect your name, company, email address, contact number, and address as required by our form when you contact us. Aside from these, we also obtain the following information:</p>
+            <ol>
+                <li>Your computer and about your visits to and use of this website, which includes your IP address, geographical location, browser type, and version, operating system, referral source, length of visit, page views and website navigation paths;</li>
+                <li>Your social media profile, which may include your pictures, gender, date of birth, relationship status, interests and hobbies, educational background, and employment details, or any other matters which are readily accessible if you link your account with our website;</li>
+                <li>Those which you provide to us for the purpose of subscribing to our email notifications and/or newsletters;</li>
+                <li>Those that you provide to us when using the services on our website, or that is generated in the course of the use of those services including the timing, frequency and pattern of service use;</li>
+                <li>Those that you post to our website for publication on the internet which includes your user name, profile pictures, and the content of your posts</li>
+                <li>Those that relate to any communication that you send to us or send through our website which includes the communication content and metadata associated with the communication; and</li>
+                <li>Any other personal or official matters which you choose to send to us.</li>
+            </ol>
+            <p>We will only collect your personal information if you voluntarily submit the information to us. If you choose not to submit your personal information to us or subsequently withdraw your consent to our use of your personal information, we may not be able to adequately respond to your inquiries or avail of our services.</p>
+            <p>If you provide personal information of any third party to us, we assume that you have obtained the required consent from the relevant third party to both the disclosure and the processing of his/her personal information in accordance with this policy.</p>
+            <p>Any questions, comments, suggestions, ideas, feedback, or other information (“Submissions”) outside of personal information provided by you to us are non-confidential and shall become our sole property. We shall own exclusive rights, including all intellectual property rights, and shall be entitled to the unrestricted use and dissemination of these Submissions for any lawful purpose, commercial or otherwise, without acknowledgment or compensation to you. You hereby waive all moral rights to any such Submissions, and you hereby warrant that any such Submissions are original with you, or that you have the right to make such Submissions.</p>
+            <p>Purpose of Collecting Your Personal Information</p>
+            <p>We mainly use your personal information to provide clear and competent responses to your inquiries with regard to the services that we offer. In relation thereto, we may use your personal information to:</p>
+            <ol>
+                <li>Administer our website and business;</li>
+                <li>Personalize our website for you;</li>
+                <li>Enable your use of the services available on our website;</li>
+                <li>Send statements, invoices, and payment reminders to you, collect payments from you;</li>
+                <li>Send you non-marketing commercial communications;</li>
+                <li>Send you email notifications that you have specifically requested;</li>
+                <li>Send you our email newsletter, if you have requested it (you can inform us at any time if you no longer require the newsletter);</li>
+                <li>Send you marketing communications relating to our business [or the businesses of carefully-selected third parties] which we think may be of interest to you, by post or, where you have specifically agreed to this, by email or similar technology (you can inform us at any time if you no longer require marketing communications);</li>
+                <li>Provide third parties with statistical information about our users (but those third parties will not be able to identify any individual user from that information);</li>
+                <li>Deal with inquiries and complaints made by or about you relating to our website;</li>
+                <li>Keep our website secure and prevent fraud;</li>
+                <li>Verify compliance with the terms and conditions governing the use of our website including monitoring private messages sent through our website private messaging service; and</li>
+                <li>Other uses. If you submit personal information for publication, we will publish and otherwise use that information in accordance with the permission that you will give us.</li>
+            </ol>
+            <p>Third-Party Websites and Content</p>
+            <p>The Site may contain (or you may be sent via the Site) links to other websites (“Third-Party Websites”) as well as articles, photographs, text, graphics, pictures, designs, music, sound, video, information, applications, software, and other content or items belonging to or originating from third parties (“Third-Party Content”).</p>
+            <p>Such Third-Party Websites and Third-Party Content are not investigated, monitored, or checked for accuracy, appropriateness, or completeness by us, and we are not responsible for any Third-Party Websites accessed through the Site or any Third-Party Content posted on, available through, or installed from the Site, including the content, accuracy, offensiveness, opinions, reliability, privacy practices, or other policies of or contained in the Third-Party Websites or the Third-Party Content.</p>
+            <p>Advertisers</p>
+            <p>We allow advertisers to display their advertisements and other information in certain areas of the Site, such as sidebar advertisements or banner advertisements. If you are an advertiser, you shall take full responsibility for any advertisements you place on the Site and any services provided on the Site or products sold through those advertisements.</p>
+            <p>Further, as an advertiser, you warrant and represent that you possess all rights and authority to place advertisements on the Site, including, but not limited to, intellectual property rights, publicity rights, and contractual rights. We simply provide the space to place such advertisements, and we have no other relationship with advertisers.</p>
+            <p>Disclosure and Retention of Personal Information</p>
+            <p>We may disclose your personal information to any of our employees, officers, insurers, professional advisers, agents, suppliers, or subcontractors insofar as necessary for the purposes set out in this policy.</p>
+            <p>We may disclose your personal information to any member of our group of affiliates, among others, insofar as reasonably necessary for the purposes set out in this policy.</p>
+            <p>We may likewise disclose your personal information:</p>
+            <ol>
+                <li>To the extent that we are required to do so by law;</li>
+                <li>In connection with any ongoing or prospective legal proceedings;</li>
+                <li>In order to establish, exercise or defend our legal rights (including providing information to others for the purposes of fraud prevention and reducing credit risk);</li>
+                <li>To any person who we reasonably believe may apply to a court or other competent authority for disclosure of that personal information where, in our reasonable information, such court or authority would be reasonably likely to order disclosure of that personal information.</li>
+            </ol>
+            <p>With the exception of item (d), the retention of your personal information may also be done under the foregoing circumstances. As a general rule, however, we only keep your personal information until such time that we have attained the purpose by which we collect the same.</p>
+            <p>Under the foregoing circumstances and to the extent permissible by applicable law, you agree not to take any action against us for the disclosure and retention of your personal information.</p>
+            <p>Security of Personal Information</p>
+            <p>We will implement reasonable and appropriate technical and organizational precautions to prevent the loss, destruction, misuse, or alteration of your personal information. To ensure utmost protection of your personal information, we will store the same on our secured services. However, we cannot guarantee that data sent over the internet will be fully secured considering that the transmission of information online is inherently insecure.</p>
+            <p>Cookies</p>
+            <p>The site may use cookies to optimize user experience. A cookie is a small text file containing an identifier (a string of letters and numbers) that is sent by a web server to a web browser and is stored by the browser. The identifier is then sent back to the server each time the browser requests a page from the server.</p>
+            <p>Cookies do not typically contain any information that personally identifies a user, but personal information that we store about you may be linked to the information stored in and obtained from cookies.</p>
+            <p>Some internet browsers allow you to refuse to accept cookies. However, blocking all cookies will have a negative impact upon the usability of many websites. If you block cookies, you will not be able to use all the features on our website.</p>
+            <p>Amendments</p>
+            <p>We may update this policy from time to time by publishing a new version on our website. It is recommended that you check this page occasionally to ensure that you are amenable to any changes made in this policy. We may also notify you of changes to this policy by email or through the private messaging system on our website.</p>
+            <p>Contact Us</p>
+            <p>If you wish to withdraw your consent to our use of your personal information or if you have any comments, suggestions, or complaints, you may contact us at through the contact portion of the app.</p>
+           
+           <div style="display: flex; flex-direction: row; justify-content: space-around; margin-top: 50px;">
+                <input type="checkbox" id="agreeCheckbox" style="flex-grow: 1; margin: 0px; height: 25px; /* Adjust the height as needed */
+                width: 25px; /* Adjust the width as needed */"><label for="agreeCheckbox" style="flex-grow: 1; margin-left: 0px; text-align: left; font-size: 15px">I have read and fully understand the content. I agree to the terms and conditions stated above.</label>
+                <button id="acceptButton" disabled style="flex-grow: 8"><b>Next</b></button>
+           </div>
+        </div>
+    </div>
 <div class="image-container set-full-height" style="background-image: url('assets4/img/peso-congress.png')">
     <!--   Creative Tim Branding   -->
     {{-- <a href="http://creative-tim.com">
@@ -268,5 +423,29 @@
            
           });
         });
+
+        $(document).ready(function(){
+    // Show the modal when the page loads
+    $("#myModal").css("display", "block");
+
+    // Enable or disable the "Accept" button based on the terms checkbox
+    $("#agreeCheckbox").change(function() {
+        if (this.checked) {
+            $("#acceptButton").prop("disabled", false);
+            $("#acceptButton").css("background-color", "rgb(172, 20, 30)");
+            $("#acceptButton").css("color", "white");
+        } else {
+            $("#acceptButton").prop("disabled", true);
+            $("#acceptButton").css("background-color", "");
+            $("#acceptButton").css("color", "black");
+        }
+    });
+
+    // Close the modal and display the page content when the "Accept" button is clicked
+    $("#acceptButton").click(function() {
+        $("#myModal").css("display", "none");
+        $("#pageContent").css("display", "block");
+    });
+});
     </script>
 </html>
