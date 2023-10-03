@@ -65,7 +65,7 @@
                                                             <div class="mb-4">
                                                                 <div class="text-center mt-3">
                                                                     <div class="">
-                                                                        <img src="{{ asset('profile_pictures/'. $pending_employee->employee->profile_picture) }}" alt="" class="avatar-lg rounded-circle" style="width: 150px; height: 150px">
+                                                                        <img src="https://pesocongress2023.freshfromuspng.store/profile_pictures/{{ $pending_employee->employee->profile_picture }}" alt="" class="avatar-lg rounded-circle" style="width: 150px; height: 150px">
                                                                     </div>
                                                                     <div class="mt-3">
                                                                         <h4 class="font-size-16 mb-1">{{ strtoupper($pending_employee->employee->first_name) }} {{ strtoupper(Str::substr($pending_employee->employee->middle_name, 0, 1)) }}. {{ strtoupper($pending_employee->employee->last_name)}} @if ($pending_employee->employee->suffix){{{ strtoupper($pending_employee->employee->suffix) }}}@endif</h4>

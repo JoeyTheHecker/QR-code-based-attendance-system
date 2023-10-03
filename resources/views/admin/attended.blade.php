@@ -31,6 +31,8 @@
                                         <th>DESIGNATION</th>
                                         <th>PROVINCE/LGU/JPO</th>
                                         <th>DELEGATION</th>
+                                        <th>GENDER</th>
+                                        <th>CONTACT NO.</th>
                                         <th>ATTENDED</th>
                                         <th>ACTION</th>
                                     </tr>
@@ -44,6 +46,8 @@
                                         <td>{{ strtoupper($attended_employee->employee->designation) }}</td>
                                         <td>{{ strtoupper($attended_employee->employee->province_lgu_jpo) }}</td>
                                         <td>{{ strtoupper($attended_employee->employee->delegation) }}</td>
+                                        <td>{{ strtoupper($attended_employee->employee->gender) }}</td>
+                                        <td>{{ strtoupper($attended_employee->employee->contact_number) }}</td>
                                         <td>{{ strtoupper($attended_employee->attended_date) }}</td>
                                         <td><button  class="ri ri-eye-fill btn btn-warning"  data-bs-toggle="modal" data-bs-target="#myModal-{{ $attended_employee->employee->id }}"></button></td>
                                             <div class="modal" id="myModal-{{ $attended_employee->employee->id }}">

@@ -15,9 +15,19 @@ use App\Mail\OrderShipped;
 use App\Mail\Qrcode;
 use App\Models\Attended;
 use App\Models\AttendedTwo;
+use App\Models\AttendedThree;
 
 class EmployeeController extends Controller
 {
+
+
+    public function importForm(){
+        return view('import-form');
+    }
+
+    // public function saveImportFormFile(){
+    //     Excel::import(new );
+    // }
 
     public function pending(){
         $pending_employees = Status::where('status','pending')->with('employee')->get();
@@ -28,12 +38,22 @@ class EmployeeController extends Controller
         $approved_employees = Status::where('status','approved')->with('employee')->get();
         return view('admin.approved',compact('approved_employees'));
     }
+
+    public function directory(){
+        $approved_employees = Status::where('status','approved')->with('employee')->get();
+        return view('directory',compact('approved_employees'));
+    }
+
     public function attended(){
         $attended_employees = Attended::with('employee')->get();
         return view('admin.attended',compact('attended_employees'));
     }
     public function attendedTwo(){
         $attended_employees = AttendedTwo::with('employee')->get();
+        return view('admin.attended',compact('attended_employees'));
+    }
+    public function attendedThree(){
+        $attended_employees = AttendedThree::with('employee')->get();
         return view('admin.attended',compact('attended_employees'));
     }
 
@@ -48,7 +68,7 @@ class EmployeeController extends Controller
             
             if($employee){
                 $current_date = date('Y-m-d');
-                if($current_date == '2023-09-2'){
+                if($current_date == '2023-09-21'){
                    try{
                     Attended::updateOrCreate(
                         ['employee_id' => $employee->id],
@@ -61,6 +81,16 @@ class EmployeeController extends Controller
                 }elseif($current_date == '2023-09-20'){
                     try{
                     AttendedTwo::updateOrCreate(
+                         ['employee_id' => $employee->id],
+                         ['attended_date' => now()]
+                     );
+                    } catch(\Exception $e){
+                     Alert::error('Something went wrong', 'Please try again...')->persistent(true,false);
+                     return redirect()->back();
+                    }
+                 }elseif($current_date == '2023-09-22'){
+                    try{
+                    AttendedThree::updateOrCreate(
                          ['employee_id' => $employee->id],
                          ['attended_date' => now()]
                      );
@@ -85,8 +115,8 @@ class EmployeeController extends Controller
             $designation = strtoupper($employee->designation);
             $fullname = $first_name.' '.$middle_name.'. '.$last_name.' '.$suffix;
             Alert::info($fullname, '')
-            ->html("<div style='position: relative; margin-bottom: 130px;'> <img src='peso-congress.png' alt='National PESO Congress' style='position: relative; width: 100%; height: 200px; z-index: 1;'> <img src='profile_pictures/$employee->profile_picture' alt='My Image' style='position: absolute; top: 110%; left: 50%;transform: translate(-50%, -50%); width: 200px; /* Adjust the size as needed */ height: 200px; /* Adjust the size as needed */ border-radius: 50%; border: 5px solid #fff; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); z-index: 2;'>
-             </div><h3 style='font-family: monospace; margin: 0'>$fullname</h3> <span style='font-family: monospace;'>$designation</span>")->showConfirmButton('Welcome!', '#3085d6')->autoClose(4000);
+            ->html("<div style='position: relative; margin-bottom: 130px;'> <img src='logo-popup.png' alt='National PESO Congress' style='position: relative; width: 100%; height: 200px; z-index: 1;'> <img src='profile_pictures/$employee->profile_picture' alt='My Image' style='position: absolute; top: 110%; left: 50%;transform: translate(-50%, -50%); width: 200px; /* Adjust the size as needed */ height: 200px; /* Adjust the size as needed */ border-radius: 50%; border: 5px solid #fff; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); z-index: 2;'>
+             </div><h3 style='font-family: monospace; margin: 0'>$fullname</h3> <span style='font-family: monospace;'>$designation</span>")->showConfirmButton('Check In!', '#3085d6')->autoClose(4000);
 
             return redirect()->back();
     }

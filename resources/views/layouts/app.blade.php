@@ -116,7 +116,7 @@
                     <!-- User details -->
                     <div class="user-profile text-center mt-3">
                         <div class="">
-                            <img src="{{ asset('assets/images/users/Logo.gif') }}" alt="" class="avatar-md rounded-circle">
+                            <img src="{{ asset('assets/images/users/278974191_302610205382534_6725297875984823466_n-PhotoRoom.png-PhotoRoom.png') }}" alt="" class="avatar-md rounded-circle">
                             {{-- <img src="{{ asset('assets/images/users/278974191_302610205382534_6725297875984823466_n-PhotoRoom.png-PhotoRoom.png') }}" alt="" class="avatar-md rounded-circle"> --}}
                         </div>
                         <div class="mt-3">
@@ -157,6 +157,7 @@
                                 <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="{{ route('attended') }}">DAY 1</a></li>
                                     <li><a href="{{ route('attended-two') }}">DAY 2</a></li>
+                                    <li><a href="{{ route('attended-three') }}">DAY 3</a></li>
                                 </ul>
                             </li>
 

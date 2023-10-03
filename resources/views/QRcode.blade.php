@@ -1,5 +1,5 @@
 <x-mail::message>
-National PESO Congress Registration(August 2023)
+National PESO Congress Registration(Oct. 25-27, 2023)
 
 Your registration for National PESO Congress has been approved.
 Please click the "QRCODE" to get your QRcode for National PESO Congress. 

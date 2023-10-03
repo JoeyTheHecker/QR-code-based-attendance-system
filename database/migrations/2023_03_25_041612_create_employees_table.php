@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('delegation');
             $table->string('email');
             $table->string('contact_number');
+            $table->string('food_restriction')->nullable();
             $table->string('profile_picture');
             $table->string('bank_name')->nullable();
             $table->string('attached_file');

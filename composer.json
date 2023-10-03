@@ -12,6 +12,7 @@
         "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.2",
+        "maatwebsite/excel": "3.1.48",
         "milon/barcode": "^10.0",
         "realrashid/sweet-alert": "^6.0"
     },

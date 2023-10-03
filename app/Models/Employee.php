@@ -27,7 +27,6 @@ class Employee extends Model
         'attached_file',
         'dt_deposit_transfer',
         'amount',
-
     ];
 
 
@@ -40,5 +39,8 @@ class Employee extends Model
     }
     public function attendedTwo(){
         return $this->hasOne(AttendedTwo::class);
+    }
+    public function attendedThree(){
+        return $this->hasOne(AttendedThree::class);
     }
 }

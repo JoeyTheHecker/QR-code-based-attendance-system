@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Attended;
 use App\Models\AttendedTwo;
+use App\Models\AttendedThree;
 use App\Models\Employee;
 use App\Models\Status;
 use Illuminate\Http\Request;
@@ -32,11 +33,12 @@ class HomeController extends Controller
         $approved = Status::where('status', 'approved')->count();
         $attended = Attended::count();
         $attended_two = AttendedTwo::count();
+        $attended_three = AttendedThree::count();
 
         
         $total_pending = "['Pending', $pending],";
         $total_approved = "['Approved', $approved],";
         $total_attended = "['Attended', $attended]";
-        return view('admin.dashboard',compact('pending','approved','attended','attended_two','total_pending','total_approved','total_attended'));
+        return view('admin.dashboard',compact('pending','approved','attended','attended_two','attended_three','total_pending','total_approved','total_attended'));
     }
 }

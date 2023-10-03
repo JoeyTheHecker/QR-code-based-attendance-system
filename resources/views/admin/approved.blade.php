@@ -63,7 +63,7 @@
                                                                                 <img src="{{ asset('profile_pictures/'. $approved_employee->employee->profile_picture) }}" alt="" class="avatar-lg rounded-circle" style="width: 150px; height: 150px">
                                                                             </div>
                                                                             <div class="mt-3">
-                                                                                <h4 class="font-size-16 mb-1">{{ strtoupper($approved_employee->employee->first_name) }} {{ strtoupper(Str::substr($approved_employee->employee->middle_name, 0, 1)) }}. {{ strtoupper($approved_employee->employee->last_name)}} @if ($approved_employee->employee->suffix){{{ strtoupper($approved_employee->employee->suffix) }}}@endif</h4>
+                                                                                <h4 class="font-size-16 mb-1">{{ strtoupper($approved_employee->employee->first_name) }} {{ strtoupper(Str::substr($approved_employee->employee->middle_name, 0, 1)) }}. {{ strtoupper($approved_employee->employee->last_name)}} @if ($approved_employee->employee->suffix != 'N/A'){{{ strtoupper($approved_employee->employee->suffix) }}}@endif</h4>
                                                                                 <span class="text-muted"></span>
                                                                             </div>
                                                                         </div>

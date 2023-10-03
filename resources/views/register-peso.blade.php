@@ -104,13 +104,24 @@ li {
     text-align: justify;
 }
 
+.scroll-container {
+            width: 100%; /* Set the width of the container */
+            height: 400px; /* Set the height of the container */
+            overflow: auto; /* Add scrollbars when content overflows */
+        }
 
+        /* Add some content to the container for demonstration */
+        .scroll-content {
+            padding: 10px; /* Add some padding for spacing */
+        }
+        
 </style>
 <body>
     <div id="myModal" class="modal">
         <div class="modal-content">
             <h2><b>Data Privacy and Terms and Condition of Use</b></h2>
-            <p>We are committed to protect the privacy of our users and we will only collect, record, store, process, and use your personal information in accordance with Republic Act No. 10173 or the Data Privacy Act of 2012 and other pertinent laws. The outline below provides for the manner by which we manage the personal information that we will obtain from you if you visit our website.</p>
+            <div class="scroll-container">
+                <p>We are committed to protect the privacy of our users and we will only collect, record, store, process, and use your personal information in accordance with Republic Act No. 10173 or the Data Privacy Act of 2012 and other pertinent laws. The outline below provides for the manner by which we manage the personal information that we will obtain from you if you visit our website.</p>
             <p>Collection of Personal Information We primarily collect your name, company, email address, contact number, and address as required by our form when you contact us. Aside from these, we also obtain the following information:</p>
             <ol>
                 <li>Your computer and about your visits to and use of this website, which includes your IP address, geographical location, browser type, and version, operating system, referral source, length of visit, page views and website navigation paths;</li>
@@ -170,14 +181,15 @@ li {
             <p>Contact Us</p>
             <p>If you wish to withdraw your consent to our use of your personal information or if you have any comments, suggestions, or complaints, you may contact us at through the contact portion of the app.</p>
            
-           <div style="display: flex; flex-direction: row; justify-content: space-around; margin-top: 50px;">
+            </div>
+           <div style="display: flex; flex-wrap: nowrap; margin-top: 50px;">
                 <input type="checkbox" id="agreeCheckbox" style="flex-grow: 1; margin: 0px; height: 25px; /* Adjust the height as needed */
                 width: 25px; /* Adjust the width as needed */"><label for="agreeCheckbox" style="flex-grow: 1; margin-left: 0px; text-align: left; font-size: 15px">I have read and fully understand the content. I agree to the terms and conditions stated above.</label>
-                <button id="acceptButton" disabled style="flex-grow: 8"><b>Next</b></button>
+                <button id="acceptButton" disabled style="flex-grow: 8;"><b>Next</b></button>
            </div>
         </div>
     </div>
-<div class="image-container set-full-height" style="background-image: url('assets4/img/peso-congress.png')">
+<div class="image-container set-full-height" style="background-image: url('assets4/img/bg-img-registration-form.png')">
     <!--   Creative Tim Branding   -->
     {{-- <a href="http://creative-tim.com">
          <div class="logo-container">
@@ -260,12 +272,12 @@ li {
                                         <label><b>Sex</b> <small>(required)</small></label>
                                         <select name="gender" id="" class="form-control" required>
                                             <option  selected disabled>Select...</option>
-                                            <option value="male.">Male</option>
-                                            <option value="female.">Female</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
                                         </select>
                                       </div>
                                     <div class="form-group">
-                                      <label><b>Suffix</b> <small>(required)</small></label>
+                                      <label><b>Suffix</b></label>
                                       <select name="suffix" id="" class="form-control">
                                           <option  selected disabled>Select...</option>
                                           <option value="Sr.">Sr.</option>
@@ -311,6 +323,7 @@ li {
                                             {{-- <input name="delegation" type="text" class="form-control" placeholder="" required> --}}
                                             <select name="delegation" id="delegation" class="form-control" required>
                                                 <option value="" disabled selected>Select</option>
+                                                <option value="DOLE Central Office">DOLE Central Office</option>
                                                 <option value="Region I">Region I</option>
                                                 <option value="Region II">Region II</option>
                                                 <option value="Region III">Region III</option>
@@ -331,7 +344,7 @@ li {
                                             </select>
                                           </div>
                                           <div class="form-group">
-                                            <label for="province_lgu_jpo"><b>LGU/SUCs </b> <small>(required)</small></label>
+                                            <label for="province_lgu_jpo"><b>Name of Office </b> <small>(required)</small></label>
                                             <input name="province_lgu_jpo" id="province_lgu_jpo" type="text" class="form-control" placeholder="" required>
                                           </div>
                                     </div>

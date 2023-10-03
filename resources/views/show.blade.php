@@ -34,11 +34,11 @@
             <div class="container-fluid p-0">
                 <div class="card">
                     <div class="card-body">
-                        <a href="javascript:window.print()" class="btn btn-success waves-effect waves-light"><i class="fa fa-print"></i></a>
-                        <div id="image" style="padding-top: 15px;">
+                        {{-- <a href="javascript:window.print()" class="btn btn-success waves-effect waves-light"><i class="fa fa-print"></i></a> --}}
+                        <div id="image" style="padding-top: 15px; border: solid 5px;">
                             <div class="text-center mt-4" style="margin: 0px">
                                 <div class="d-flex align-items-center justify-content-center mb-1">
-                                    <img class="" style="width: 20rem;" src="{{ asset('peso-congress-transparent-bg.png') }}"
+                                    <img class="" style="width: 20rem;" src="{{ asset('id-logo-peso-congress.png') }}"
                                     alt="Header Avatar">
 
                                     {{-- <h3 class="text-muted text-center font-size-28"><b>DOLE RO8</b></h3> --}}
@@ -48,7 +48,7 @@
                                 {{-- <h4 class="text-muted text-center font-size-15"><b>{{ $employee->employee_code }}</b></h4> --}}
                                 <div class="form-horizontal mt-1">
                                     <div class="form-group mb-3 row text-center" >
-                                        <h4 class="text-muted text-center font-size-24" style="margin: 0;"><b>{{ Str::ucfirst($employee->first_name) }} {{ Str::ucfirst(Str::substr($employee->middle_name, 0, 1)) }}. {{ Str::ucfirst($employee->last_name) }}</b></h4>
+                                        <h4 class="text-muted text-center font-size-30" style="margin: 0; font-size: 30px"><b>{{ Str::ucfirst($employee->first_name) }} {{ Str::ucfirst(Str::substr($employee->middle_name, 0, 1)) }}. {{ Str::ucfirst($employee->last_name) }} @if ($employee->suffix != "N/A"){{{ ucfirst($employee->suffix) }}}@endif</b></h4>
                                         <h4 class="text-muted text-center font-size-18" style="margin: 0;">{{ strtoupper($employee->designation) }}</h4>
                                         <h4 class="text-muted text-center font-size-18" style="margin: 0;">{{ $employee->province_lgu_jpo }}</h4>
                                         <h4 class="text-muted text-center font-size-18" style="margin: 0;">{{ $employee->delegation }}</h4>
@@ -67,7 +67,7 @@
 
                         <div class="form-group mb-0 row mt-2">
                             <div class="col-sm-7 mt-3">
-                                <a href="auth-recoverpw.html" class="text-muted"><i class="mdi mdi-lock"></i>Back to home</a>
+                                {{-- <a href="auth-recoverpw.html" class="text-muted"><i class="mdi mdi-lock"></i>Back to home</a> --}}
                             </div>
                             {{-- <div class="col-sm-5 mt-3">
                                 <a href="auth-register.html" class="text-muted"><i class="mdi mdi-account-circle"></i> Create an account</a>
